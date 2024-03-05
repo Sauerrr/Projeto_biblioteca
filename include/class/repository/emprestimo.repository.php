@@ -4,20 +4,24 @@ class AutorRepository implements Repository{
     public static function listAll(){
         $db = DB::getInstance();
 
-        $sql = "SELECT * FROM autor";
+        $sql = "SELECT * FROM emprestimo";
 
         $query = $db->prepare($sql);
         $query->execute();
 
         $list = array();
         foreach($query->fetchAll(PDO::FETCH_OBJ) as $row){
-            $autor = new Autor;
-            $autor->setId($row->id);
-            $autor->setNome($row->nome);
-            $autor->setDataInclusao($row->data_inclusao);
-            $autor->setDataAlteracao($row->data_alteracao);
-            $autor->setInclusaoFuncionarioId($row->inclusao_funcionario_id);
-            $autor->setAlteracaoFuncionarioId($row->alteracao_funcionario_id);
+            $emprestimo = new emprestimo;
+            $emprestimo->setId($row->id);
+            $emprestimo->setLivroId($row->livro_id);
+            $emprestimo->setClienteId($row->cliente_id);
+            $emprestimo->setDataVencimento($row->data_vencimento);
+            $emprestimo->setDataInclusao($row->data_inclusao);
+
+            $emprestimo->setDataInclusao($row->data_inclusao);
+            $emprestimo->setDataAlteracao($row->data_alteracao);
+            $emprestimo->setInclusaoFuncionarioId($row->inclusao_funcionario_id);
+            $emprestimo->setAlteracaoFuncionarioId($row->alteracao_funcionario_id);
 
             $list[] = $autor;
 
