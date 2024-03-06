@@ -75,18 +75,18 @@ class Funcionario{
     }
 
 
-    public function getInclusaoFuncionario_id(){
+    public function getInclusaoFuncionarioId(){
         return $this->inclusao_funcionario_id;
     }
-    public function setInclusaoFuncionario_id($inclusao_funcionario_id){
+    public function setInclusaoFuncionarioId($inclusao_funcionario_id){
         $this->inclusao_funcionario_id = $inclusao_funcionario_id;
     }
 
 
-    public function getAlteracaofuncionario_id(){
+    public function getAlteracaofuncionarioId(){
         return $this->alteracao_funcionario_id;
     }
-    public function setAlteracaoFuncionario_id($alteracao_funcionario_id){
+    public function setAlteracaoFuncionarioId($alteracao_funcionario_id){
         $this->alteracao_funcionario_id = $alteracao_funcionario_id;
     }
 }
