@@ -58,9 +58,48 @@ class AutorRepository implements Repository{
         }
         return null;
     }
-    public static function insert ($obj){}
-    public static function update ($obj){}
-    public static function delete ($id){}
+    public static function insert ($obj){
+        $db = DB::getInstance();
+
+        $sql = "INSERT INTO livro (titulo, ano, genero, isbn, autor_id, data_inclusao, inclusao_funcionario_id) VALUES (:titulo,:ano,:genero, :isbn, :autor_id, :data_inclusao, :inclusao_funcionario_id)";
+        
+        $query = $db->prepare($sql);
+
+        $query->bindValue(":titulo",$obj->getTitulo());
+        $query->bindValue(":ano",$obj->getAno());
+        $query->bindValue(":genero",$obj->getGenero());
+        $query->bindValue(":isbn",$obj->getIsbn());
+        $query->bindValue(":autor_id",$obj->getAutor_id());
+        $query->bindValue(":data_inclusao",$obj->getDataInclusao());
+        $query->bindValue(":inclusao_funcionario_id",$obj->getInclusaoFuncionarioId());
+
+        $query->execute();
+
+        $id = $db->lastInsertId();
+        
+        return $id;
+    }
+    public static function update ($obj){
+        $db = DB::getInstance();
+
+        $sql = "UPDATE livro SET titulo = :titulo, data_alteracao = :data_alteracao, alteracao_funcionario_id = :alteracao_funcionario_id WHERE id = :id";
+
+        $query = $db->prepare($sql);
+        $query->bindValue(":titulo", $obj->getTitulo());
+        $query->bindValue(":data_alteracao", $obj->getDataAlteracao());
+        $query->bindValue(":inclusao_funcionario_id", $obj->getInclusaoFuncionarioId());
+        $query->bindValue(":id", $obj->getId());
+        $query->execute();
+    }
+    public static function delete ($id){
+        $db = DB::getInstance();
+
+        $sql = "DELETE FROM livro WHERE id = :id";
+
+        $query = $db->prepare($sql);
+        $query->bindValue(":id", $id);
+        $query->execute();
+    }
 
 
 }
