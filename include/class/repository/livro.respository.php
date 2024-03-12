@@ -1,6 +1,6 @@
 <?php
 
-class AutorRepository implements Repository{
+class LivroRepository implements Repository{
     public static function listAll(){
         $db = DB::getInstance();
 

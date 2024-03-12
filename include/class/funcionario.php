@@ -46,8 +46,12 @@ class Funcionario{
     public function getSenha(){
         return $this->senha;
     }
-    public function setSenha($senha){
-        $this->senha = $senha;
+    public function setSenha($senha, $is_rached = false){
+        if($is_rached){
+            $this->senha = $senha;
+        }else{
+            $this->senha = hash("sha256", $senha);
+        }
     }
 
 
@@ -88,6 +92,15 @@ class Funcionario{
     }
     public function setAlteracaoFuncionarioId($alteracao_funcionario_id){
         $this->alteracao_funcionario_id = $alteracao_funcionario_id;
+    }
+
+    public function checkSenha($senha){
+        $senha = hash("sha256", $senha);
+        if($senha == $this->senha){
+            return  true;
+        }
+        
+        return false;
     }
 }
 

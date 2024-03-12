@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include_once("db.php");
 include_once("class/cliente.php");
 include_once("class/autor.php");
@@ -8,6 +10,7 @@ include_once("class/emprestimo.php");
 include_once("class/funcionario.php");
 include_once("class/repository/repository.php");
 include_once("class/repository/autor.repository.php");
+include_once("class/auth.php");
 
 
 
