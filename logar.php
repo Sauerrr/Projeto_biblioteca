@@ -1,18 +1,20 @@
 <?php
 include_once("include/factory.php");
 
+
 $cpf = $_POST["cpf"];
-$cpf = $_POST["senha"];
+$senha = $_POST["senha"];
 
 if($cpf == null || $senha == null){
     header("location: login.php");
     exit();
 }
 
-if ($cpf = "" || $senha = ""){
+if ($cpf == "" || $senha == ""){
     header("location: login.php");
     exit();
 }
+
 
 $auth = Auth::login($cpf,$senha);
 
@@ -21,7 +23,7 @@ if(Auth::isAutenticated()){
     exit();
 }
 
-header("location: login.php");
+header("location: login.php?message=".$auth);
 exit();
 
 ?>

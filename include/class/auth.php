@@ -1,7 +1,7 @@
 <?php
 
 class Auth{
-    private $expires_time = 1200;
+    private static $expires_time = 1200;
     public static function login($cpf, $senha){
         $funcionario = FuncionarioRepository::getByCPF($cpf);
 

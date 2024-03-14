@@ -46,8 +46,8 @@ class Funcionario{
     public function getSenha(){
         return $this->senha;
     }
-    public function setSenha($senha, $is_rached = false){
-        if($is_rached){
+    public function setSenha($senha, $is_hashed = false){
+        if($is_hashed){
             $this->senha = $senha;
         }else{
             $this->senha = hash("sha256", $senha);
@@ -87,7 +87,7 @@ class Funcionario{
     }
 
 
-    public function getAlteracaofuncionarioId(){
+    public function getAlteracaoFuncionarioId(){
         return $this->alteracao_funcionario_id;
     }
     public function setAlteracaoFuncionarioId($alteracao_funcionario_id){

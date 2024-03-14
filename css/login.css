@@ -6,9 +6,10 @@
 
 body {
     width: 100%;
-  height: 10%;
-  background: linear-gradient(to bottom right, #3E2C1B, #9B786F);
-  border-radius: 50%;
+    height: 10%;
+    background: purple;
+    background: linear-gradient(#111, #ae00ff);
+    border-radius: 50%;
 }
 
 

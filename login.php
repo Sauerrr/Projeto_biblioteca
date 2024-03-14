@@ -2,7 +2,7 @@
 include_once("include/factory.php");
 
 if(Auth::isAutenticated()){
-    header("location: login.php");
+    header("location: index.php");
     exit();
 }
 
@@ -23,16 +23,16 @@ if(Auth::isAutenticated()){
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="">
+                <form method="post" action="logar.php">
                     <h2>Login Biblioteca</h2>
                     <div class="inputbox">
                         <icon-icon name="mail-outline"></icon-icon>
-                        <input type="text" required>
+                        <input name="cpf" type="text" required>
                         <label for="">CPF</label>
                     </div>
                     <div class="inputbox">
                         <icon-icon name="lock-closed-outline"></icon-icon>
-                        <input type="password" required>
+                        <input name="senha" type="password" required>
                         <label for="">Senha</label>
                     </div>
 

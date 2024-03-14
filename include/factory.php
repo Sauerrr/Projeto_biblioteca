@@ -10,6 +10,10 @@ include_once("class/emprestimo.php");
 include_once("class/funcionario.php");
 include_once("class/repository/repository.php");
 include_once("class/repository/autor.repository.php");
+include_once("class/repository/cliente.repository.php");
+include_once("class/repository/funcionario.repository.php");
+include_once("class/repository/livro.repository.php");
+include_once("class/repository/emprestimo.repository.php");
 include_once("class/auth.php");
 
 
