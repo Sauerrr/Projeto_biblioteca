@@ -35,5 +35,15 @@ li a{
 }
 
 li a:hover{
-    border-bottom: 0.1em soldi #fff;
+    border-bottom: 0.1em solid #fff;
+}
+
+button a{
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.container{
+    text-align: center;
+    margin-bottom: 20px;
 }
