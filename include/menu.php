@@ -74,5 +74,5 @@
         </ul>
     </div>
 
-    <a href="logout.php" class="btn btn-dark">Sair</a>
+    <a href="logout.php" class="btn btn-danger">Sair</a>
 </header>

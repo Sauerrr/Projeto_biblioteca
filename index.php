@@ -15,9 +15,10 @@ if (!Auth::isAutenticated()) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Biblioteca "Conexão de Livros"</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Biblioteca "Conexão de Livros"</title>
+
 </head>
 <body>
 <header>
@@ -27,15 +28,15 @@ if (!Auth::isAutenticated()) {
 </header>
 <div class="container">
             <br>
-            <a href="autor_listagem.php" class="btn btn-dark">Autor</a>
+            <a href="autor_listagem.php" class="btn btn-light">Autor</a>
             <br>
-            <a href="logout.php" class="btn btn-dark">Emprestimos</a>
+            <a href="logout.php" class="btn btn-light">Emprestimos</a>
             <br>
-            <a href="logout.php" class="btn btn-dark">Funcionarios</a>
+            <a href="funcionario_listagem.php" class="btn btn-light">Funcionarios</a>
             <br>
-            <a href="logout.php" class="btn btn-dark">Livros</a>
+            <a href="livro_listagem.php" class="btn btn-light">Livros</a>
             <br>
-            <a href="logout.php" class="btn btn-dark">Clientes</a>
+            <a href="cliente_listagem.php" class="btn btn-light">Clientes</a>
     </div>
 
 </body>
