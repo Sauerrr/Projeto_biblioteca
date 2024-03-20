@@ -43,12 +43,10 @@ button a{
     text-decoration: none;
 }
 
-h1 {
-    color: white;
-}
 
-#botao{
+
+.container{
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-evenly;
 }
