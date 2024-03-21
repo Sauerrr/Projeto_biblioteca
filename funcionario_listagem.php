@@ -28,9 +28,9 @@ if (!Auth::isAutenticated()) {
         <?php include("include/menu.php"); ?>
     </header>
     <div class="container">
-        <h1>Funcionario > Listagem</h1>
+        <h1>Funcionários > Listagem</h1>
         <div id="botao">
-            <button class="btn btn-light">Adicionar Funcionário</button>
+            <button class="btn btn-info">Adicionar Funcionário</button>
         </div>
         <br>
         <div class="table-responsive">

@@ -29,7 +29,7 @@ if (!Auth::isAutenticated()) {
     <div class="container">
         <h1>Autor > Listagem</h1>
         <div id="botao">
-            <button class="btn btn-light">Adicionar autor</button>
+            <a href="autor_novo.php" class="btn btn-info">Adicionar autor</a>
         </div>
         <br>
         <div class="table-responsive">
@@ -52,7 +52,7 @@ if (!Auth::isAutenticated()) {
                             <td><?php echo $autor->getNome(); ?> </td>
 
                             <td>
-                                <a href="#" class="btn btn-info">Editar</a>
+                                <a href="autor_editar.php?id=<?php echo $autor->getId(); ?>" class="btn btn-info">Editar</a>
                                 <a href="#" class="btn btn-danger">Deletar</a>
 
                             </td>

@@ -30,7 +30,7 @@ if (!Auth::isAutenticated()) {
     <div class="container">
         <h1>Livros > Listagem</h1>
         <div id="botao">
-            <button class="btn btn-light">Adicionar Livro</button>
+            <button class="btn btn-info">Adicionar Livro</button>
         </div>
         <br>
         <div class="table-responsive">

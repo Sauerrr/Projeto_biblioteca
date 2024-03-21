@@ -33,7 +33,7 @@ class FuncionarioRepository implements Repository{
     public static function get($id){
         $db = DB::getInstance();
 
-        $sql = "SELECT * FROM autor WHERE id = :id";
+        $sql = "SELECT * FROM funcionario WHERE id = :id";
 
         $query = $db->prepare($sql);
         $query->bindParam(":id",$id);

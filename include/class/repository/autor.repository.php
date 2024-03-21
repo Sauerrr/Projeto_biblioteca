@@ -76,11 +76,9 @@ class AutorRepository implements Repository{
         $query = $db->prepare($sql);
         $query->bindValue(":nome", $obj->getNome());
         $query->bindValue(":data_alteracao", $obj->getDataAlteracao());
-        $query->bindValue(":inclusao_funcionario_id", $obj->getInclusaoFuncionarioId());
+        $query->bindValue(":alteracao_funcionario_id", $obj->getInclusaoFuncionarioId());
         $query->bindValue(":id", $obj->getId());
         $query->execute();
-
-
     }
     public static function delete ($id){
         $db = DB::getInstance();
