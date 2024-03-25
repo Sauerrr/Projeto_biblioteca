@@ -27,19 +27,36 @@ if (!Auth::isAutenticated()) {
         <?php include("include/menu.php"); ?>
     </header>
     <div class="container">
-        <h1>Autor > Novo</h1>
+        <h1>Cliente > Novo</h1>
         <br>
         <div id="botaonovo">
-            <a href="autor_listagem.php" class="btn btn-info">Voltar</a>
+            <a href="cliente_listagem.php" class="btn btn-info">Voltar</a>
         </div>
 
         <div class="row mt-4">
             <div class="col-md-10">
 
-                <form action="autor_novo_post.php" method="POST">
+                <form action="cliente_novo_post.php" method="POST">
                     <div class="mb-3">
                         <label for="nome" class="form-label" id="nome">Nome</label>
                         <input type="text" name="nome" class="form-control" id="nome">
+
+                        <label for="telefone" class="form-label" id="telefone">Telefone</label>
+                        <input type="text" name="telefone" class="form-control" id="telefone">
+
+                        <label for="email" class="form-label" id="email">Email</label>
+                        <input type="email" name="email" class="form-control" id="email">
+
+                        <label for="cpf" class="form-label" id="cpf">CPF</label>
+                        <input type="text" name="cpf" class="form-control" id="cpf">
+
+                        <label for="rg" class="form-label" id="rg">RG</label>
+                        <input type="text" name="rg" class="form-control" id="rg">
+
+                        <label for="data_nascimento" class="form-label" id="data_nascimento">Data de Nascimento</label>
+                        <input type="date" name="data_nascimento" class="form-control" id="data_nascimento">
+
+
                     </div>
 
                     <div class="mb-3">

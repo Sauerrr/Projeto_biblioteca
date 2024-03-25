@@ -30,7 +30,7 @@ if (!Auth::isAutenticated()) {
     <div class="container">
         <h1>Livros > Listagem</h1>
         <div id="botao">
-            <button class="btn btn-info">Adicionar Livro</button>
+            <a href="livro_novo.php" class="btn btn-info">Adicionar Livro</a>
         </div>
         <br>
         <div class="table-responsive">
@@ -60,8 +60,9 @@ if (!Auth::isAutenticated()) {
 
 
                             <td>
-                                <a href="#" class="btn btn-info">Editar</a>
+                            <a href="livro_editar.php?id=<?php echo $livro->getId(); ?>" class="btn btn-info">Editar</a>
                                 <a href="#" class="btn btn-danger">Deletar</a>
+
 
                             </td>
 

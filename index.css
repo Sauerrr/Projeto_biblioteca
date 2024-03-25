@@ -1,6 +1,6 @@
 body{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: purple;
     background: linear-gradient(#111 , #ae00ff);
 }
@@ -49,4 +49,7 @@ button a{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+.preto{
+    background-color: white;
 }

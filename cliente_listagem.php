@@ -19,7 +19,7 @@ if (!Auth::isAutenticated()) {
     <title>NOVO CLIENTE</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 
 <body>
@@ -30,7 +30,7 @@ if (!Auth::isAutenticated()) {
     <div class="container">
         <h1>Clientes > Listagem</h1>
         <div id="botao">
-            <button class="btn btn-info">Adicionar Cliente</button>
+            <a href="cliente_novo.php" class="btn btn-info">Adicionar Cliente</a>
         </div>
         <br>
         <div class="table-responsive">
@@ -65,7 +65,7 @@ if (!Auth::isAutenticated()) {
 
 
                             <td>
-                                <a href="#" class="btn btn-info">Editar</a>
+                                <a href="cliente_editar.php?id=<?php echo $cliente->getId(); ?>" class="btn btn-info">Editar</a>
                                 <a href="#" class="btn btn-danger">Deletar</a>
 
                             </td>
