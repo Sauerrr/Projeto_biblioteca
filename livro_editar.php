@@ -72,7 +72,7 @@ if (!$livro) {
                         <br>
 
 
-                        <label for="autor" class="form-label">Autor</label>
+                        <label for="autor" class="form-label">Autor:</label>
                         <select name="autor" id="autor">
                             <?php
                             foreach (AutorRepository::listAll() as $autor) {

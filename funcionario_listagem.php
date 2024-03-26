@@ -61,7 +61,7 @@ if (!Auth::isAutenticated()) {
 
                             <td>
                             <a href="funcionario_editar.php?id=<?php echo $funcionario->getId(); ?>" class="btn btn-info">Editar</a>
-                                <a href="#" class="btn btn-danger">Deletar</a>
+                                <a href="funcionario_excluir.php?id=<?php echo $funcionario->getId();?>" class="btn btn-danger">Deletar</a>
 
 
                             </td>

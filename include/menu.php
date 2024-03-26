@@ -2,7 +2,7 @@
     <header>
 
     <div class="logo">
-            "Conexão de Livros"
+            <a href="index.php"> "Conexão de Livros"</a>
         </div>
 
         <div class="dropdown">

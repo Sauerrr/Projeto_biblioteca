@@ -66,7 +66,9 @@ if (!Auth::isAutenticated()) {
 
                             <td>
                                 <a href="cliente_editar.php?id=<?php echo $cliente->getId(); ?>" class="btn btn-info">Editar</a>
-                                <a href="#" class="btn btn-danger">Deletar</a>
+                                <?php if(LivroRepository::countByAutor($cliente->getId()) == 0){ ?>
+                                <a href="cliente_excluir.php?id=<?php echo $cliente->getId();?>" class="btn btn-danger">Deletar</a>
+                                <?php } ?>
 
                             </td>
 

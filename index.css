@@ -53,3 +53,8 @@ button a{
 .preto{
     background-color: white;
 }
+
+a {
+    text-decoration: none;
+    color: white;
+}
