@@ -25,12 +25,43 @@ if (!$funcionario) {
     exit();
 }
 
-/*if(ClienteRepository::countByCliente($autor->getId()) > 0){
-    header("location: autor_listagem.php");
-
+if(EmprestimoRepository::countByInclusaoFuncionario($funcio->getId()) > 0){
+    header("location: funcioList.php");
     exit();
 }
-*/
+if(EmprestimoRepository::countByAlteracaoFuncionario($funcio->getId()) > 0){
+    header("location: funcioList.php");
+    exit();
+}
+if(EmprestimoRepository::countByDevolucaoFuncionario($funcio->getId()) > 0){
+    header("location: funcioList.php");
+    exit();
+}
+if(EmprestimoRepository::countByRenovacaoFuncionario($funcio->getId()) > 0){
+    header("location: funcioList.php");
+    exit();
+}if(ClienteRepository::countByInclusaoFuncionario($funcio->getId()) > 0){
+    header("location: funcioList.php");
+    exit();
+}
+if(ClienteRepository::countByAlteracaoFuncionario($funcio->getId()) > 0){
+    header("location: funcioList.php");
+    exit();
+}if(AutorRepository::countByInclusaoFuncionario($funcio->getId()) > 0){
+    header("location: funcioList.php");
+    exit();
+}
+if(AutorRepository::countByAlteracaoFuncionario($funcio->getId()) > 0){
+    header("location: funcioList.php");
+    exit();
+}if(LivroRepository::countByInclusaoFuncionario($funcio->getId()) > 0){
+    header("location: funcioList.php");
+    exit();
+}
+if(LivroRepository::countByAlteracaoFuncionario($funcio->getId()) > 0){
+    header("location: funcioList.php");
+    exit();
+}
 
 FuncionarioRepository::delete($funcionario->getId());
 

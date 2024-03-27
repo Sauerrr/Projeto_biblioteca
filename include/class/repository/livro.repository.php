@@ -113,6 +113,30 @@ class LivroRepository implements Repository{
 
     }
 
+    public static function countByInclusaoFuncionario($inclusao_funcionario_id){
+        $db = DB::getInstance();
+
+        $sql = 'SELECT count(*) FROM livro WHERE inclusao_funcionario_id = :inclusao_funcionario_id'; 
+
+        $query = $db->prepare($sql);
+        $query->bindValue(":inclusao_funcionario_id",$inclusao_funcionario_id);
+        $query->execute();
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        return $row["count(*)"];
+    }
+    public static function countByAlteracaoFuncionario($alteracao_funcionario_id){
+        $db = DB::getInstance();
+
+        $sql = 'SELECT count(*) FROM livro WHERE alteracao_funcionario_id = :alteracao_funcionario_id'; 
+
+        $query = $db->prepare($sql);
+        $query->bindValue(":alteracao_funcionario_id",$alteracao_funcionario_id);
+        $query->execute();
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        return $row["count(*)"];
+    }
 }
 
 
