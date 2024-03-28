@@ -32,7 +32,7 @@ if (!Auth::isAutenticated()) {
 
         <a href="autor_listagem.php" class="btn btn-light">Autor</a>
 
-        <a href="#" class="btn btn-light">Emprestimos</a>
+        <a href="emprestimo_listagem.php" class="btn btn-light">Emprestimos</a>
 
         <a href="funcionario_listagem.php" class="btn btn-light">Funcionarios</a>
 

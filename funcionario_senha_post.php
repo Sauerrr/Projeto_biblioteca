@@ -9,46 +9,43 @@ if (!Auth::isAutenticated()) {
 $user = Auth::getUser();
 
 if (!isset($_POST["id"])) {
-    header("location: funcionario_listagem.php");
+    header("location: funcionario_listagem.php?1");
     exit();
 }
 
 if ($_POST["id"] == "" || $_POST["id"] == null) {
-    header("location: funcionario_listagem.php");
+    header("location: funcionario_listagem.php?2");
     exit();
 }
 
 $funcionario = FuncionarioRepository::get($_POST["id"]);
 
 if (!$funcionario) {
-    header("location: funcionario_listagem.php");
+    header("location: funcionario_listagem.php?3");
     exit();
 }
 
 
-if (!isset($_POST["nome"])){
+if (!isset($_POST["senha"])){
     header("location: funcionario_editar.php?id=".$funcionario->getId());
 
     exit();
 }
 
-if( $_POST["nome"] == "" || $_POST ["nome"] == null){
-    header("location: funcionario_editar.php");
+if( $_POST["senha"] !=  $_POST ["repSenha"]){
+    header("location: funcionario_senha.php?id=".$funcionario->getId());
     
     exit();
 }
 
 
-$funcionario->setNome($_POST["nome"]);
-$funcionario->setCpf($_POST["cpf"]);
-$funcionario->setTelefone($_POST["telefone"]);
+
 $funcionario->setSenha($_POST["senha"]);
-$funcionario->setEmail($_POST["email"]);
 $funcionario->setAlteracaoFuncionarioId($user->getId());
 $funcionario->setDataAlteracao(date("Y-m-d H:i:s")); 
 
 FuncionarioRepository::update($funcionario);
 
-header("location: funcionario_editar.php?id".$funcionario->getId());
+header("location: funcionario_senha.php?id=".$funcionario->getId());
 
 ?>

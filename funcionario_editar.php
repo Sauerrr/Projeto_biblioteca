@@ -70,7 +70,7 @@ if (!$funcionario) {
                         <input type="email" name="email" class="form-control" id="email" value="<?php echo $funcionario->getEmail(); ?>">
 
                         <br>
-                        <a href="funcionario_senha.php" class="btn btn-light">Alterar senha</a>
+                        <a href="funcionario_senha.php?id=<?php echo $funcionario->getId(); ?>" class="btn btn-light">Alterar senha</a>
                     </div>
 
                     <div class="mb-3">

@@ -60,7 +60,7 @@ if (!Auth::isAutenticated()) {
                             <td><?php echo $cliente->getEmail(); ?> </td>
                             <td><?php echo $cliente->getCpf(); ?> </td>
                             <td><?php echo $cliente->getRg(); ?> </td>
-                            <td><?php echo $cliente->getDataNascimento(); ?> </td>
+                            <td><?php echo $cliente->getDataNascimento("d/m/Y"); ?> </td>
 
 
 

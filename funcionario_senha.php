@@ -6,23 +6,23 @@ if (!Auth::isAutenticated()) {
     exit();
 }
 
-/* if (!isset($_GET["id"])) {
-    header("location: funcionario_listagem.php");
+if (!isset($_GET["id"])) {
+    header("location: funcionario_listagem.php?teste1");
     exit();
 }
 
 if ($_GET["id"] == "" || $_GET["id"] == null) {
-    header("location: funcionario_listagem.php");
+    header("location: funcionario_listagem.php?teste2");
     exit();
 }
 
 $funcionario = FuncionarioRepository::get($_GET["id"]);
 
 if (!$funcionario) {
-    header("location: funcionario_listagem.php");
+    header("location: funcionario_listagem.php?teste3");
     exit();
 }
- */
+
 ?>
 
 <!DOCTYPE html>
@@ -60,14 +60,14 @@ if (!$funcionario) {
                         <label for="senha" class="form-label" id="senha">Digite a nova senha</label>
                         <input type="text" name="senha" class="form-control" id="senha">
 
-                        <label for="senha" class="form-label" id="senha">Confirmar senha</label>
-                        <input type="text" name="senha" class="form-control" id="senha">
+                        <label for="repSenha" class="form-label" id="repSenha">Confirmar senha</label>
+                        <input type="text" name="repSenha" class="form-control" id="repSenha">
 
                         
                     </div>
 
                     <div class="mb-3">
-                        <input type="hidden" name="id" >
+                        <input type="hidden" name="id" value="<?php echo $funcionario->getId();?>" >
                         <button type="submit" class="btn btn-success">Alterar</button>
                     </div>
                 </form>
