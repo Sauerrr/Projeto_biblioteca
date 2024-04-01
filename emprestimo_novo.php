@@ -43,7 +43,7 @@ if (!Auth::isAutenticated()) {
                             <?php
                             foreach (LivroRepository::listAll() as $livro) {
                             ?>
-                                <option value="<?php echo $livro->getTitulo(); ?>">
+                                <option value="<?php echo $livro->getId(); ?>">
                                     <?php echo $livro->getTitulo() ?>
                                 </option>
                             <?php } ?>
@@ -57,7 +57,7 @@ if (!Auth::isAutenticated()) {
                             <?php
                             foreach (ClienteRepository::listAll() as $cliente) {
                             ?>
-                                <option value="<?php echo $cliente->getNome(); ?>">
+                                <option value="<?php echo $cliente->getId(); ?>">
                                     <?php echo $cliente->getNome() ?>
                                 </option>
                             <?php } ?>

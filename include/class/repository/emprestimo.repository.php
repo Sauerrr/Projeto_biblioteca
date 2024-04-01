@@ -65,14 +65,13 @@ class EmprestimoRepository implements Repository{
     public static function insert ($obj){
         $db = DB::getInstance();
     
-            $sql = "INSERT INTO emprestimo (livro_id, cliente_id, data_vencimento, data_devolucao , data_inclusao, inclusao_funcionario_id) VALUES (:livro_id, :cliente_id , :data_vencimento, :data_devolucao ,  :data_inclusao, :inclusao_funcionario_id)";
+            $sql = "INSERT INTO emprestimo (livro_id, cliente_id, data_vencimento, data_inclusao, inclusao_funcionario_id) VALUES (:livro_id, :cliente_id , :data_vencimento,   :data_inclusao, :inclusao_funcionario_id)";
             
             $query = $db->prepare($sql);
 
             $query->bindValue(":livro_id",$obj->getLivroId());
             $query->bindValue(":cliente_id",$obj->getClienteId());
             $query->bindValue(":data_vencimento",$obj->getDataVencimento());
-            $query->bindValue(":data_devolucao",$obj->getDataDevolucao());
             $query->bindValue(":data_inclusao",$obj->getDataInclusao());
             $query->bindValue(":inclusao_funcionario_id",$obj->getInclusaoFuncionarioId());
     
