@@ -30,7 +30,7 @@ if (!Auth::isAutenticated()) {
     <div class="container">
         <h1>Emprestimos > Listagem</h1>
         <div id="botao">
-            <a href="cliente_novo.php" class="btn btn-info">Adicionar empréstimo</a>
+            <a href="emprestimo_novo.php" class="btn btn-info">Adicionar empréstimo</a>
         </div>
         <br>
         <div class="table-responsive">
@@ -68,7 +68,7 @@ if (!Auth::isAutenticated()) {
                             <td><?php echo $emprestimo->getDataDevolucao(); ?> </td>
 
                             <td>
-                                <a href="#" class="btn btn-info">Editar</a>
+                                <a href="emprestimo_editar.php" class="btn btn-info">Editar</a>
 
                                 <a href="#" class="btn btn-danger">Deletar</a>
 

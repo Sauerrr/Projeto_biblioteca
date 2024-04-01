@@ -71,7 +71,7 @@ class EmprestimoRepository implements Repository{
 
             $query->bindValue(":livro_id",$obj->getLivroId());
             $query->bindValue(":cliente_id",$obj->getClienteId());
-            $query->bindValue(":data_vencimento",$obj->getDataVecimento());
+            $query->bindValue(":data_vencimento",$obj->getDataVencimento());
             $query->bindValue(":data_devolucao",$obj->getDataDevolucao());
             $query->bindValue(":data_inclusao",$obj->getDataInclusao());
             $query->bindValue(":inclusao_funcionario_id",$obj->getInclusaoFuncionarioId());
