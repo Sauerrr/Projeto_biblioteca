@@ -43,7 +43,7 @@ if (!$funcionario) {
         <?php include("include/menu.php"); ?>
     </header>
     <div class="container">
-        <h1>Funcionario > Editar</h1>
+        <h1>Funcionário > Editar</h1>
         <br>
         <div id="botaonovo">
             <a href="funcionario_listagem.php" class="btn btn-info">Voltar</a>

@@ -25,9 +25,8 @@ if (!$cliente) {
     exit();
 }
 
-if(EmprestimoRepository::countByCliente($cliente->getId()) > 0){
+if(EmprestimoRepository::countByCliente($cliente->getID())){
     header("location: cliente_listagem.php");
-
     exit();
 }
 
@@ -35,5 +34,3 @@ if(EmprestimoRepository::countByCliente($cliente->getId()) > 0){
 ClienteRepository::delete($cliente->getId());
 
 header("location: cliente_listagem.php");
-
-?>

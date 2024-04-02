@@ -28,7 +28,7 @@ if (!Auth::isAutenticated()) {
         <?php include("include/menu.php"); ?>
     </header>
     <div class="container">
-        <h1>Emprestimos > Listagem</h1>
+        <h1>Empréstimos > Listagem</h1>
         <div id="botao">
             <a href="emprestimo_novo.php" class="btn btn-info">Adicionar empréstimo</a>
         </div>
@@ -68,9 +68,17 @@ if (!Auth::isAutenticated()) {
                             <td><?php echo $emprestimo->getDataDevolucao(); ?> </td>
 
                             <td>
-                                <a href="emprestimo_editar.php" class="btn btn-info">Editar</a>
+                                <?php
+                                if(
+                                    $emprestimo->getDataRenovacao() == null &&
+                                    $emprestimo->getDataDevolucao() == null &&
+                                    $emprestimo->getDataAlteracao() == null
+                                ){
 
-                                <a href="#" class="btn btn-danger">Deletar</a>
+                                ?>
+
+                                <a href="emprestimo_excluir.php?id=<?php echo $emprestimo->getId();?>" class="btn btn-danger">Deletar</a>
+                                <?php } ?>
 
 
                             </td>

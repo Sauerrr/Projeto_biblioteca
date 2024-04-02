@@ -20,6 +20,18 @@ if( $_POST["titulo"] == "" || $_POST ["titulo"] == null){
     exit();
 }
 
+if (!isset($_POST["autor"])){
+    header("location: funcionario_novo.php");
+
+    exit();
+}
+
+if( $_POST["autor"] == "" || $_POST ["autor"] == null){
+    header("location: funcionario_novo.php");
+    
+    exit();
+}
+
 $livro = Factory::livro();
 
 $livro->setTitulo($_POST["titulo"]);

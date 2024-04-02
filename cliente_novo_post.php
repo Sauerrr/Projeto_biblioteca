@@ -20,6 +20,42 @@ if( $_POST["nome"] == "" || $_POST ["nome"] == null){
     exit();
 }
 
+if (!isset($_POST["telefone"])){
+    header("location: cliente_novo.php");
+
+    exit();
+}
+
+if( $_POST["telefone"] == "" || $_POST ["telefone"] == null){
+    header("location: cliente_novo.php");
+    
+    exit();
+}
+
+if (!isset($_POST["email"])){
+    header("location: cliente_novo.php");
+
+    exit();
+}
+
+if( $_POST["email"] == "" || $_POST ["email"] == null){
+    header("location: cliente_novo.php");
+    
+    exit();
+}
+
+if (!isset($_POST["data_nascimento"])){
+    header("location: cliente_novo.php");
+
+    exit();
+}
+
+if( $_POST["data_nascimento"] == "" || $_POST ["data_nascimento"] == null){
+    header("location: cliente_novo.php");
+    
+    exit();
+}
+
 $cliente = Factory::cliente();
 
 $cliente->setNome($_POST["nome"]);

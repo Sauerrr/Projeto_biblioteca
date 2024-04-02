@@ -42,7 +42,13 @@ class Factory{
 
     
     public static function emprestimo(){
-        return new Emprestimo();
+        $emprestimo = new Emprestimo();
+
+        $datetime = new DateTime();
+        $datetime->add(new DateInterval("P7D"));
+
+        $emprestimo->setDataVencimento($datetime->format("Y-m-d"));
+        return $emprestimo;
     }
 
     

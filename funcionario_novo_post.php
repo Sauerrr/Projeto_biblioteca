@@ -20,6 +20,54 @@ if( $_POST["nome"] == "" || $_POST ["nome"] == null){
     exit();
 }
 
+if (!isset($_POST["cpf"])){
+    header("location: funcionario_novo.php");
+
+    exit();
+}
+
+if( $_POST["cpf"] == "" || $_POST ["cpf"] == null){
+    header("location: funcionario_novo.php");
+    
+    exit();
+}
+
+if (!isset($_POST["telefone"])){
+    header("location: funcionario_novo.php");
+
+    exit();
+}
+
+if( $_POST["telefone"] == "" || $_POST ["telefone"] == null){
+    header("location: funcionario_novo.php");
+    
+    exit();
+}
+
+if (!isset($_POST["senha"])){
+    header("location: funcionario_novo.php");
+
+    exit();
+}
+
+if( $_POST["senha"] == "" || $_POST ["senha"] == null){
+    header("location: funcionario_novo.php");
+    
+    exit();
+}
+
+if (!isset($_POST["email"])){
+    header("location: funcionario_novo.php");
+
+    exit();
+}
+
+if( $_POST["email"] == "" || $_POST ["email"] == null){
+    header("location: funcionario_novo.php");
+    
+    exit();
+}
+
 $funcionario = Factory::funcionario();
 
 $funcionario->setNome($_POST["nome"]);
