@@ -22,20 +22,21 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="emprestimo_listagem.php">Listagem</a></li>
+                <li><a class="dropdown-item" href="emprestimo_ativo.php">Listagem - Ativos</a></li>
+                <li><a class="dropdown-item" href="emprestimo_vencido.php">Listagem - Vencidos</a></li>
+                <li><a class="dropdown-item" href="emprestimo_renovado.php">Listagem - Renovados</a></li>
+                <li><a class="dropdown-item" href="emprestimo_naoRenovado.php">Listagem - Não Renovados</a></li>
+
+
+
 
             </ul>
         </div>
 
 
             </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#"></a></li>
-                <li><a class="dropdown-item" href="#"></a></li>
-                <li><a class="dropdown-item" href="#"></a></li>
-                <li><a class="dropdown-item" href="#"></a></li>
-                <li><a class="dropdown-item" href="#"></a></li>
-            </ul>
-        </div>
+            
+     
 
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -70,7 +71,6 @@
 
         <a href="logout.php" class="btn btn-danger">Sair</a>
     
-
 
     </header>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
