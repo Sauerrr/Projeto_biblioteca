@@ -40,13 +40,14 @@ if (!Auth::isAutenticated()) {
                     <th>Cliente</th>
                     <th>Data Vencimento</th>
                     <th>Data de Devolução</th>
+                    <th>Ações</th>
                     
 
                 </thead>
                 <tbody>
 
                     <?php
-                    foreach (EmprestimoRepository::listAll() as $emprestimo) {
+                    foreach (EmprestimoRepository::listAllActive() as $emprestimo) {
                     ?>
 
                         <tr>
@@ -66,6 +67,20 @@ if (!Auth::isAutenticated()) {
                             <td><?php echo $emprestimo->getDataDevolucao(); ?> </td>
 
         
+                            
+
+                            <td>
+                                <?php
+                                if(
+                                    $emprestimo->getDataRenovacao() == null &&
+                                    $emprestimo->getDataDevolucao() == null &&
+                                    $emprestimo->getDataAlteracao() == null
+                                ){
+
+                                ?>
+
+                                <a href="emprestimo_excluir.php?id=<?php echo $emprestimo->getId();?>" class="btn btn-danger">Deletar</a>
+                                <?php } ?>
                         </tr>
                     <?php
                     }

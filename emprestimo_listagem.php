@@ -63,21 +63,34 @@ if (!Auth::isAutenticated()) {
                             <td><?php $cliente = ClienteRepository::get($emprestimo->getClienteId());
                                 echo $emprestimo->getClienteId() . " - " . $cliente->getNome(); ?>
                             </td>
-                            
-                            <td><?php echo $emprestimo->getDataVencimento("d/m/Y"); ?> </td>
-                            <td><?php echo $emprestimo->getDataDevolucao(); ?> </td>
 
+                            <td><?php echo $emprestimo->getDataVencimento("d/m/Y"); ?> </td>
+                            <td><?php echo $emprestimo->getDataDevolucao("d/m/Y"); ?> </td>
+                            
                             <td>
-                                <?php
-                                if(
+                            <?php
+                                if (
+                                    $emprestimo->getDataVencimento("Y-m-d") >= date("Y-m-d") &&
                                     $emprestimo->getDataRenovacao() == null &&
-                                    $emprestimo->getDataDevolucao() == null &&
-                                    $emprestimo->getDataAlteracao() == null
-                                ){
+                                    $emprestimo->getDataDevolucao() == null
+                                ) {
 
                                 ?>
 
-                                <a href="emprestimo_excluir.php?id=<?php echo $emprestimo->getId();?>" class="btn btn-danger">Deletar</a>
+                                    <a href="emprestimo_renovar.php?id=<?php echo $emprestimo->getId(); ?>" class="btn btn-danger">Deletar</a>
+
+                            </td>
+                            <td>
+                                <?php
+                                if (
+                                    $emprestimo->getDataRenovacao() == null &&
+                                    $emprestimo->getDataDevolucao() == null &&
+                                    $emprestimo->getDataAlteracao() == null
+                                ) {
+
+                                ?>
+
+                                    <a href="emprestimo_excluir.php?id=<?php echo $emprestimo->getId(); ?>" class="btn btn-danger">Deletar</a>
                                 <?php } ?>
 
 

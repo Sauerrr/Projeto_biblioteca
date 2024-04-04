@@ -16,7 +16,7 @@ if (!Auth::isAutenticated()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-    <title>EMPRESTIMOS NAO RENOVADOS</title>
+    <title>EMPRESTIMOS DEVOLVIDOS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
@@ -28,7 +28,7 @@ if (!Auth::isAutenticated()) {
         <?php include("include/menu.php"); ?>
     </header>
     <div class="container">
-        <h1>Empréstimos > Não renovados</h1>
+        <h1>Empréstimos > Devolvidos</h1>
        
         <br>
         <div class="table-responsive">
@@ -40,13 +40,14 @@ if (!Auth::isAutenticated()) {
                     <th>Cliente</th>
                     <th>Data Vencimento</th>
                     <th>Data de Devolução</th>
+                    <th>Ação</th>
                     
 
                 </thead>
                 <tbody>
 
                     <?php
-                    foreach (EmprestimoRepository::listAllNotRenovated() as $emprestimo) {
+                    foreach (EmprestimoRepository::listAllReturned() as $emprestimo) {
                     ?>
 
                         <tr>
@@ -63,8 +64,10 @@ if (!Auth::isAutenticated()) {
                             </td>
                             
                             <td><?php echo $emprestimo->getDataVencimento("d/m/Y"); ?> </td>
-                            <td><?php echo $emprestimo->getDataDevolucao(); ?> </td>
+                            <td><?php echo $emprestimo->getDataDevolucao("d/m/Y"); ?> </td>
 
+                           
+        
                             <td>
                                 <?php
                                 if(
@@ -77,8 +80,6 @@ if (!Auth::isAutenticated()) {
 
                                 <a href="emprestimo_excluir.php?id=<?php echo $emprestimo->getId();?>" class="btn btn-danger">Deletar</a>
                                 <?php } ?>
-
-        
                         </tr>
                     <?php
                     }

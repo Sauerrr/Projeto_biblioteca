@@ -56,6 +56,11 @@ if( $_POST["data_nascimento"] == "" || $_POST ["data_nascimento"] == null){
     exit();
 }
 
+
+echo $_POST["data_nascimento"];
+
+$datetime = DateTime::createFromFormat('d/m/Y', $_POST["data_nascimento"]);
+$dateFormatted = $datetime->format('Y-m-d');
 $cliente = Factory::cliente();
 
 $cliente->setNome($_POST["nome"]);
@@ -63,7 +68,7 @@ $cliente->setTelefone($_POST["telefone"]);
 $cliente->setEmail($_POST["email"]);
 $cliente->setCpf($_POST["cpf"]);
 $cliente->setRg($_POST["rg"]);
-$cliente->setDataNascimento($_POST["data_nascimento"]);
+$cliente->setDataNascimento($dateFormatted);
 $cliente->setInclusaoFuncionarioId($user->getId());
 $cliente->setDataInclusao(date("Y-m-d H:i:s"));
 

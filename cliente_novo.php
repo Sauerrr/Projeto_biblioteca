@@ -54,7 +54,10 @@ if (!Auth::isAutenticated()) {
                         <input type="text" name="rg" class="form-control" id="rg">
 
                         <label for="data_nascimento" class="form-label" id="data_nascimento">Data de Nascimento</label>
-                        <input type="date" name="data_nascimento" class="form-control" id="data_nascimento">
+                        <?php $cliente = ClienteRepository::listAll();
+                        $cliente = $cliente[0]; ?>
+                        <input type="text" name="data_nascimento" class="form-control data_nascimento" >
+
 
 
                     </div>
@@ -67,7 +70,15 @@ if (!Auth::isAutenticated()) {
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+    <script src="js/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".data_nascimento").mask("00/00/0000")
+        });
+    </script>
 </body>
 
 </html>

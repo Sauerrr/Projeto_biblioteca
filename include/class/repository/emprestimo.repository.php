@@ -32,10 +32,168 @@ class EmprestimoRepository implements Repository{
         return $list;
     }
 
+    public static function listAllActive(){
+        $db = DB::getInstance();
+
+        $sql = "SELECT * FROM emprestimo where data_devolucao is null";
+
+        $query = $db->prepare($sql);
+        $query->execute();
+
+        $list = array();
+        foreach($query->fetchAll(PDO::FETCH_OBJ) as $row){
+            $emprestimo = new emprestimo;
+            $emprestimo->setId($row->id);
+            $emprestimo->setLivroId($row->livro_id);
+            $emprestimo->setClienteId($row->cliente_id);
+            $emprestimo->setDataVencimento($row->data_vencimento);
+            $emprestimo->setDataInclusao($row->data_inclusao);
+            $emprestimo->setDataRenovacao($row->data_renovacao);
+            $emprestimo->setDataDevolucao($row->data_devolucao);
+            $emprestimo->setDataAlteracao($row->data_alteracao);
+            $emprestimo->setInclusaoFuncionarioId($row->inclusao_funcionario_id);
+            $emprestimo->setAlteracaoFuncionarioId($row->alteracao_funcionario_id);
+            $emprestimo->setRenovacaoFuncionarioId($row->renovacao_funcionario_id);
+            $emprestimo->setDevolucaoFuncionarioId($row->devolucao_funcionario_id);
+
+            $list[] = $emprestimo;
+
+        }
+
+        return $list;
+    }
+
+    public static function listAllDelayed(){
+        $db = DB::getInstance();
+
+        $sql = "SELECT * FROM emprestimo where data_devolucao is null AND data_vencimento < :data";
+
+        $query = $db->prepare($sql);
+        $query->bindValue(":data",date("Y-m-d"));
+        $query->execute();
+
+        $list = array();
+        foreach($query->fetchAll(PDO::FETCH_OBJ) as $row){
+            $emprestimo = new emprestimo;
+            $emprestimo->setId($row->id);
+            $emprestimo->setLivroId($row->livro_id);
+            $emprestimo->setClienteId($row->cliente_id);
+            $emprestimo->setDataVencimento($row->data_vencimento);
+            $emprestimo->setDataInclusao($row->data_inclusao);
+            $emprestimo->setDataRenovacao($row->data_renovacao);
+            $emprestimo->setDataDevolucao($row->data_devolucao);
+            $emprestimo->setDataAlteracao($row->data_alteracao);
+            $emprestimo->setInclusaoFuncionarioId($row->inclusao_funcionario_id);
+            $emprestimo->setAlteracaoFuncionarioId($row->alteracao_funcionario_id);
+            $emprestimo->setRenovacaoFuncionarioId($row->renovacao_funcionario_id);
+            $emprestimo->setDevolucaoFuncionarioId($row->devolucao_funcionario_id);
+
+            $list[] = $emprestimo;
+
+        }
+
+        return $list;
+    }
+
+    public static function listAllRenovated(){
+        $db = DB::getInstance();
+
+        $sql = "SELECT * FROM emprestimo where data_devolucao is null AND data_renovacao is not null";
+
+        $query = $db->prepare($sql);
+        $query->execute();
+
+        $list = array();
+        foreach($query->fetchAll(PDO::FETCH_OBJ) as $row){
+            $emprestimo = new emprestimo;
+            $emprestimo->setId($row->id);
+            $emprestimo->setLivroId($row->livro_id);
+            $emprestimo->setClienteId($row->cliente_id);
+            $emprestimo->setDataVencimento($row->data_vencimento);
+            $emprestimo->setDataInclusao($row->data_inclusao);
+            $emprestimo->setDataRenovacao($row->data_renovacao);
+            $emprestimo->setDataDevolucao($row->data_devolucao);
+            $emprestimo->setDataAlteracao($row->data_alteracao);
+            $emprestimo->setInclusaoFuncionarioId($row->inclusao_funcionario_id);
+            $emprestimo->setAlteracaoFuncionarioId($row->alteracao_funcionario_id);
+            $emprestimo->setRenovacaoFuncionarioId($row->renovacao_funcionario_id);
+            $emprestimo->setDevolucaoFuncionarioId($row->devolucao_funcionario_id);
+
+            $list[] = $emprestimo;
+
+        }
+
+        return $list;
+    }
+
+    public static function listAllNotRenovated(){
+        $db = DB::getInstance();
+
+        $sql = "SELECT * FROM emprestimo where data_devolucao is null AND data_renovacao is not null";
+
+        $query = $db->prepare($sql);
+        $query->execute();
+
+        $list = array();
+        foreach($query->fetchAll(PDO::FETCH_OBJ) as $row){
+            $emprestimo = new emprestimo;
+            $emprestimo->setId($row->id);
+            $emprestimo->setLivroId($row->livro_id);
+            $emprestimo->setClienteId($row->cliente_id);
+            $emprestimo->setDataVencimento($row->data_vencimento);
+            $emprestimo->setDataInclusao($row->data_inclusao);
+            $emprestimo->setDataRenovacao($row->data_renovacao);
+            $emprestimo->setDataDevolucao($row->data_devolucao);
+            $emprestimo->setDataAlteracao($row->data_alteracao);
+            $emprestimo->setInclusaoFuncionarioId($row->inclusao_funcionario_id);
+            $emprestimo->setAlteracaoFuncionarioId($row->alteracao_funcionario_id);
+            $emprestimo->setRenovacaoFuncionarioId($row->renovacao_funcionario_id);
+            $emprestimo->setDevolucaoFuncionarioId($row->devolucao_funcionario_id);
+
+            $list[] = $emprestimo;
+
+        }
+
+        return $list;
+    }
+
+    public static function listAllReturned(){
+        $db = DB::getInstance();
+
+        $sql = "SELECT * FROM emprestimo where data_devolucao is not null";
+
+        $query = $db->prepare($sql);
+        $query->execute();
+
+        $list = array();
+        foreach($query->fetchAll(PDO::FETCH_OBJ) as $row){
+            $emprestimo = new emprestimo;
+            $emprestimo->setId($row->id);
+            $emprestimo->setLivroId($row->livro_id);
+            $emprestimo->setClienteId($row->cliente_id);
+            $emprestimo->setDataVencimento($row->data_vencimento);
+            $emprestimo->setDataInclusao($row->data_inclusao);
+            $emprestimo->setDataRenovacao($row->data_renovacao);
+            $emprestimo->setDataDevolucao($row->data_devolucao);
+            $emprestimo->setDataAlteracao($row->data_alteracao);
+            $emprestimo->setInclusaoFuncionarioId($row->inclusao_funcionario_id);
+            $emprestimo->setAlteracaoFuncionarioId($row->alteracao_funcionario_id);
+            $emprestimo->setRenovacaoFuncionarioId($row->renovacao_funcionario_id);
+            $emprestimo->setDevolucaoFuncionarioId($row->devolucao_funcionario_id);
+
+            $list[] = $emprestimo;
+
+        }
+
+        return $list;
+    }
+
+
+
     public static function get($id){
         $db = DB::getInstance();
 
-        $sql = "SELECT * FROM autor WHERE id = :id";
+        $sql = "SELECT * FROM emprestimo WHERE id = :id";
 
         $query = $db->prepare($sql);
         $query->bindParam(":id",$id);
@@ -209,44 +367,7 @@ class EmprestimoRepository implements Repository{
         return $row["count(*)"];
     }
 
-    public static function countByDataRenovacao($emprestimo_id){
-        $db = DB::getInstance();
-
-        $sql = 'SELECT count(*) FROM emprestimo WHERE data_renovacao = :emprestimo_id';
-
-        $query = $db->prepare($sql);
-        $query->bindValue(":emprestimo_id",$emprestimo_id);
-        $query->execute();
-
-        $row = $query->fetch(PDO::FETCH_ASSOC);
-        return $row["count(*)"];
-    }
-
-    public static function countByDataDevolucao($emprestimo_id){
-        $db = DB::getInstance();
-
-        $sql = 'SELECT count(*) FROM emprestimo WHERE data_devolucao = :emprestimo_id';
-
-        $query = $db->prepare($sql);
-        $query->bindValue(":emprestimo_id",$emprestimo_id);
-        $query->execute();
-
-        $row = $query->fetch(PDO::FETCH_ASSOC);
-        return $row["count(*)"];
-    }
-
-    public static function countByDataAlteracao($emprestimo_id){
-        $db = DB::getInstance();
-
-        $sql = 'SELECT count(*) FROM emprestimo WHERE data_alteracao = :emprestimo_id';
-
-        $query = $db->prepare($sql);
-        $query->bindValue(":emprestimo_id",$emprestimo_id);
-        $query->execute();
-
-        $row = $query->fetch(PDO::FETCH_ASSOC);
-        return $row["count(*)"];
-    }
+    
 
 }
 

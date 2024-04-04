@@ -23,6 +23,7 @@
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="emprestimo_listagem.php">Listagem</a></li>
                 <li><a class="dropdown-item" href="emprestimo_ativo.php">Listagem - Ativos</a></li>
+                <li><a class="dropdown-item" href="emprestimo_devolvido.php">Listagem - Devolvidos</a></li>
                 <li><a class="dropdown-item" href="emprestimo_vencido.php">Listagem - Vencidos</a></li>
                 <li><a class="dropdown-item" href="emprestimo_renovado.php">Listagem - Renovados</a></li>
                 <li><a class="dropdown-item" href="emprestimo_naoRenovado.php">Listagem - Não Renovados</a></li>
