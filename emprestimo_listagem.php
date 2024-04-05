@@ -16,7 +16,7 @@ if (!Auth::isAutenticated()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-    <title>NOVO EMPRESTIMO</title>
+    <title>EMPRESTIMO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
@@ -53,7 +53,6 @@ if (!Auth::isAutenticated()) {
 
                         <tr>
                             <td><?php echo $emprestimo->getId(); ?></td>
-
                             <td>
                                 <?php $livro = LivroRepository::get($emprestimo->getLivroId());
                                 echo $emprestimo->getLivroId() . " - " . $livro->getTitulo(); ?>
@@ -63,36 +62,27 @@ if (!Auth::isAutenticated()) {
                             <td><?php $cliente = ClienteRepository::get($emprestimo->getClienteId());
                                 echo $emprestimo->getClienteId() . " - " . $cliente->getNome(); ?>
                             </td>
-
                             <td><?php echo $emprestimo->getDataVencimento("d/m/Y"); ?> </td>
-                            <td><?php echo $emprestimo->getDataDevolucao("d/m/Y"); ?> </td>
-                            
+                            <td><?php echo $emprestimo->getDataDevolucao(); ?> </td>
+
                             <td>
-                            <?php
-                                if (
-                                    $emprestimo->getDataVencimento("Y-m-d") >= date("Y-m-d") &&
-                                    $emprestimo->getDataRenovacao() == null &&
-                                    $emprestimo->getDataDevolucao() == null
-                                ) {
-
-                                ?>
-
-                                    <a href="emprestimo_renovar.php?id=<?php echo $emprestimo->getId(); ?>" class="btn btn-danger">Deletar</a>
-
-                            </td>
-                            <td>
-                                <?php
-                                if (
-                                    $emprestimo->getDataRenovacao() == null &&
-                                    $emprestimo->getDataDevolucao() == null &&
-                                    $emprestimo->getDataAlteracao() == null
-                                ) {
-
-                                ?>
-
-                                    <a href="emprestimo_excluir.php?id=<?php echo $emprestimo->getId(); ?>" class="btn btn-danger">Deletar</a>
+                                <?php 
+                                if(
+                                $emprestimo->getDataRenovacao() == null &&
+                                $emprestimo->getDataRenovacao() == null &&
+                                $emprestimo->getDataAlteracao() == null
+                                ){?>
+                                  <a href="emprestimo_excluir.php?id=<?php echo $emprestimo->getId(); ?>" class="btn btn-danger">Excluir</a>
                                 <?php } ?>
 
+                                <?php 
+                                if(
+                                $emprestimo->getDataVencimento("Y-m-d") >= date("Y-m-d") == null &&
+                                $emprestimo->getDataRenovacao() == null &&
+                                $emprestimo->getDataAlteracao() == null
+                                ){?>
+                                  <a href="emprestimo_renovar.php?id=<?php echo $emprestimo->getId(); ?>" class="btn btn-info">Renovar</a>
+                                <?php } ?>
 
                             </td>
                         </tr>

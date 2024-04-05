@@ -35,9 +35,10 @@ class EmprestimoRepository implements Repository{
     public static function listAllActive(){
         $db = DB::getInstance();
 
-        $sql = "SELECT * FROM emprestimo where data_devolucao is null";
+        $sql = "SELECT * FROM emprestimo where data_devolucao is null AND data_vencimento > :data";
 
         $query = $db->prepare($sql);
+        $query->bindValue("data", date("Y-m-d"));
         $query->execute();
 
         $list = array();
