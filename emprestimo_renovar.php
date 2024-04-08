@@ -6,20 +6,22 @@ if (!Auth::isAutenticated()) {
     exit();
 }
 
-
-if (!isset($_GET["id"])){
-    header("location: emprestimo_novo.php?penis");
-
+if(!isset($_GET['id'])){
+    header("location: emprestimo_listagem.php?1");
     exit();
 }
-
-if( $_GET["id"] == "" || $_GET ["id"] == null){
-    header("location: emprestimo_novo.php?34");
-    
+if($_GET["id"] == "" || $_GET["id"] == null){
+    header("location: emprestimo_listagem.php?2");
     exit();
 }
-
 $emprestimo = EmprestimoRepository::get($_GET["id"]);
+if(!$emprestimo){
+    header("location: emprestimo_listagem.php?3");
+    exit();
+}
+
+
+$emprestimo_novo = Factory::emprestimo();
 ?>
 
 <!DOCTYPE html>
@@ -63,14 +65,15 @@ $emprestimo = EmprestimoRepository::get($_GET["id"]);
                     <input type="text" name="cliente_id" class="form-control" id="cliente_id" value="<?php $cliente = ClienteRepository::get($emprestimo->getClienteId());
                                 echo $emprestimo->getClienteId() . " - " . $cliente->getNome(); ?>" disabled>
                     <br>
-                    <label for="nome" class="form-label" >Data Renovação</label>
-                    <input type="text" name="data_renovacao" class="form-control" id="data_renovacao" value="<?php echo $emprestimo->getDataRenovacao("d/m/Y") ?>" disabled>
+                    <label for="nome" class="form-label" >Data de Vencimento</label>
+                    <input type="text" name="data_vencimento" class="form-control" id="data_vencimento" value="<?php echo $emprestimo_novo->getDataVencimento("d/m/Y"); ?>" readonly>
 
 
                     </div>
 
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-success">Enviar</button>
+                        <input type="hidden" name="id" value="<?php echo $emprestimo->getId(); ?>">
+                        <button type="submit" class="btn btn-success">Renovar</button>
                     </div>
                 </form>
 

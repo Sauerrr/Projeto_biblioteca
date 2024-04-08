@@ -130,7 +130,7 @@ class EmprestimoRepository implements Repository{
     public static function listAllNotRenovated(){
         $db = DB::getInstance();
 
-        $sql = "SELECT * FROM emprestimo where data_devolucao is null AND data_renovacao is not null";
+        $sql = "SELECT * FROM emprestimo where data_devolucao is null AND data_renovacao is  null";
 
         $query = $db->prepare($sql);
         $query->execute();
@@ -243,13 +243,14 @@ class EmprestimoRepository implements Repository{
     public static function update ($obj){
         $db = DB::getInstance();
 
-        $sql = "UPDATE emprestimo SET livro_id = :livro_id, data_alteracao = :data_alteracao, alteracao_funcionario_id = :alteracao_funcionario_id, data_renovacao = :data_renovacao WHERE id = :id";
+        $sql = "UPDATE emprestimo SET data_alteracao = :data_alteracao, data_renovacao = :data_renovacao, alteracao_funcionario_id = :alteracao_funcionario_id, renovacao_funcionario_id = :renovacao_funcionario_id, data_vencimento = :data_vencimento WHERE id = :id";
 
         $query = $db->prepare($sql);
-        $query->bindValue(":livro_id", $obj->getLivroId());
         $query->bindValue(":data_alteracao", $obj->getDataAlteracao());
         $query->bindValue(":data_renovacao", $obj->getDatarenovacao());
-        $query->bindValue(":inclusao_funcionario_id", $obj->getInclusaoFuncionarioId());
+        $query->bindValue(":alteracao_funcionario_id", $obj->getAlteracaoFuncionarioId());
+        $query->bindValue(":renovacao_funcionario_id", $obj->getRenovacaoFuncionarioId());
+        $query->bindValue(":data_vencimento", $obj->getDataVencimento('Y-m-d'));
         $query->bindValue(":id", $obj->getId());
         $query->execute();
 

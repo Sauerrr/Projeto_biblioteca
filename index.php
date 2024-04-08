@@ -41,6 +41,12 @@ if (!Auth::isAutenticated()) {
         <a href="cliente_listagem.php" class="btn btn-light">Clientes</a>
     </div>
 
+    <div class="imgcenter">
+        <img src="imagens/imgcentro.png" alt="imagem central">
+
+    </div>
+
+    
     
 </body>
 

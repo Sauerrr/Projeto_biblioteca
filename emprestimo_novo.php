@@ -37,7 +37,7 @@ $emprestimo = Factory::emprestimo();
         <div class="row mt-4">
             <div class="col-md-4">
 
-                <form action="emprestimo_efetuar_renovacao.php" method="POST">
+                <form action="emprestimo_novo_post.php" method="POST">
                     <div class="mb-3">
                         <label for="livro_id" class="form-label">Livro:</label>
                         <select name="livro_id" id="livro_id">
@@ -45,6 +45,7 @@ $emprestimo = Factory::emprestimo();
                             foreach (LivroRepository::listAll() as $livro) {
                                 if(EmprestimoRepository::countByLivro($livro->getId()) == 0){
                             ?>
+                            
                                 <option value="<?php echo $livro->getId(); ?>">
                                     <?php echo $livro->getTitulo() ?>
                                 </option>

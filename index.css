@@ -56,3 +56,11 @@ a {
     text-decoration: none;
     color: white;
 }
+
+.imgcenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35rem;
+    
+}

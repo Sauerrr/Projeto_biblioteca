@@ -40,7 +40,7 @@ if (!Auth::isAutenticated()) {
                     <th>Cliente</th>
                     <th>Data Vencimento</th>
                     <th>Data de Devolução</th>
-                    
+                    <th>Ação</th>
 
                 </thead>
                 <tbody>
