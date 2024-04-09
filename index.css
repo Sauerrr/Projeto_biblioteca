@@ -64,3 +64,21 @@ a {
     height: 35rem;
     
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 1px 0;
+}
+
+.copyright {
+    text-align: center;
+	color: white;
+	margin: 20px 0 30px;
+	}
+
+

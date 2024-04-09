@@ -28,26 +28,19 @@ if (!Auth::isAutenticated()) {
         <?php include("include/menu.php"); ?>
 
     </header>
-    <div class="container">
-
-        <a href="autor_listagem.php" class="btn btn-light">Autor</a>
-
-        <a href="emprestimo_listagem.php" class="btn btn-light">Empréstimos</a>
-
-        <a href="funcionario_listagem.php" class="btn btn-light">Funcionários</a>
-
-        <a href="livro_listagem.php" class="btn btn-light">Livros</a>
-
-        <a href="cliente_listagem.php" class="btn btn-light">Clientes</a>
-    </div>
-
+    
     <div class="imgcenter">
         <img src="imagens/imgcentro.png" alt="imagem central">
 
     </div>
 
-    
-    
+    <footer>
+         <p class="copyright"> &copy; Copyright Conexão de Livros - 2024
+		Vitor Sauer - Curso SISMETRO
+	</p>
+</footer>
+
+
 </body>
 
 
