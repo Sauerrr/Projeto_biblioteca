@@ -39,16 +39,16 @@ if (!Auth::isAutenticated()) {
                 <form action="livro_novo_post.php" method="POST">
                     <div class="mb-3">
                         <label for="titulo" class="form-label" id="titulo">Titulo</label>
-                        <input type="text" name="titulo" class="form-control" id="titulo">
+                        <input type="text" name="titulo" class="form-control" id="titulo" required>
 
                         <label for="ano" class="form-label" id="ano">Ano de lançamento</label>
-                        <input type="number" name="ano" class="form-control" id="ano">
+                        <input type="number" name="ano" class="form-control" id="ano" required>
 
                         <label for="genero" class="form-label" id="genero">Genero</label>
-                        <input type="text" name="genero" class="form-control" id="genero">
+                        <input type="text" name="genero" class="form-control" id="genero" required>
 
                         <label for="isbn" class="form-label" id="isbn">ISBN</label>
-                        <input type="text" name="isbn" class="form-control" id="isbn">
+                        <input type="text" name="isbn" class="form-control" id="isbn" required> 
 
                         <br>
                         

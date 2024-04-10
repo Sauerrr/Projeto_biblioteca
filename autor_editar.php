@@ -57,7 +57,7 @@ if (!$autor) {
                 <form action="autor_editar_post.php" method="POST">
                     <div class="mb-3">
                         <label for="nome" class="form-label" id="nome">Nome</label>
-                        <input type="text" name="nome" class="form-control" id="nome" value="<?php echo $autor->getNome(); ?>">
+                        <input type="text" name="nome" class="form-control" id="nome" required value="<?php echo $autor->getNome(); ?>">
                     </div>
 
                     <div class="mb-3">

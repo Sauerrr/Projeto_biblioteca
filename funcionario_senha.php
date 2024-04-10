@@ -54,14 +54,14 @@ if (!$funcionario) {
         <div class="row mt-4">
             <div class="col-md-10">
 
-                <form action="funcionario_senha_post.php" method="POST">
+                <form action="funcionario_senha _post.php" method="POST">
                     <div class="mb-3">
 
                         <label for="senha" class="form-label" id="senha">Digite a nova senha</label>
-                        <input type="text" name="senha" class="form-control" id="senha">
+                        <input type="text" name="senha" class="form-control" id="senha" required>
 
                         <label for="repSenha" class="form-label" id="repSenha">Confirmar senha</label>
-                        <input type="text" name="repSenha" class="form-control" id="repSenha">
+                        <input type="text" name="repSenha" class="form-control" id="repSenha" required>
 
                         
                     </div>

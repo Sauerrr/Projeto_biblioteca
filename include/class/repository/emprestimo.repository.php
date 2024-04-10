@@ -243,13 +243,15 @@ class EmprestimoRepository implements Repository{
     public static function update ($obj){
         $db = DB::getInstance();
 
-        $sql = "UPDATE emprestimo SET data_alteracao = :data_alteracao, data_renovacao = :data_renovacao, alteracao_funcionario_id = :alteracao_funcionario_id, renovacao_funcionario_id = :renovacao_funcionario_id, data_vencimento = :data_vencimento WHERE id = :id";
+        $sql = "UPDATE emprestimo SET data_alteracao = :data_alteracao, data_renovacao = :data_renovacao, data_devolucao = :data_devolucao, alteracao_funcionario_id = :alteracao_funcionario_id, renovacao_funcionario_id = :renovacao_funcionario_id, devolucao_funcionario_id = :devolucao_funcionario_id, data_vencimento = :data_vencimento WHERE id = :id";
 
         $query = $db->prepare($sql);
         $query->bindValue(":data_alteracao", $obj->getDataAlteracao());
-        $query->bindValue(":data_renovacao", $obj->getDatarenovacao());
+        $query->bindValue(":data_renovacao", $obj->getDataRenovacao());
+        $query->bindValue(":data_devolucao", $obj->getDataDevolucao());
         $query->bindValue(":alteracao_funcionario_id", $obj->getAlteracaoFuncionarioId());
         $query->bindValue(":renovacao_funcionario_id", $obj->getRenovacaoFuncionarioId());
+        $query->bindValue(":devolucao_funcionario_id", $obj->getDevolucaoFuncionarioId());
         $query->bindValue(":data_vencimento", $obj->getDataVencimento('Y-m-d'));
         $query->bindValue(":id", $obj->getId());
         $query->execute();
@@ -346,7 +348,7 @@ class EmprestimoRepository implements Repository{
     public static function countByClienteWithNotFinished($cliente_id){
         $db = DB::getInstance();
 
-        $sql = 'SELECT count(*) FROM emprestimo WHERE cliente_id = :cliente_id AND data_devolucao IS NULL'; 
+        $sql = 'SELECT count(*) FROM emprestimo WHERE cliente_id = :cliente_id AND data_devolucao IS NOT NULL'; 
 
         $query = $db->prepare($sql);
         $query->bindValue(":cliente_id",$cliente_id);
@@ -359,7 +361,7 @@ class EmprestimoRepository implements Repository{
     public static function countByLivroWithNotFinished($livro_id){
         $db = DB::getInstance();
 
-        $sql = 'SELECT count(*) FROM emprestimo WHERE livro_id = :livro_id AND data_devolucao IS NULL'; 
+        $sql = 'SELECT count(*) FROM emprestimo WHERE livro_id = :livro_id AND data_devolucao IS NOT NULL'; 
 
         $query = $db->prepare($sql);
         $query->bindValue(":livro_id",$livro_id);
@@ -369,7 +371,31 @@ class EmprestimoRepository implements Repository{
         return $row["count(*)"];
     }
 
-    
+    public static function countByLivrosDevol($livro_id){ // Conta quantos emprestimos existem com o mesmo livro
+        $db = DB::getInstance();
+
+        $sql = 'SELECT count(*) FROM emprestimo WHERE livro_id = :livro_id and data_devolucao is not null'; 
+
+        $query = $db->prepare($sql);
+        $query->bindValue(":livro_id", $livro_id);
+        $query->execute();
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        return $row["count(*)"];
+    }
+
+    public static function countByClientesDevol($cliente_id){ 
+        $db = DB::getInstance();
+
+        $sql = 'SELECT count(*) FROM emprestimo WHERE cliente_id = :cliente_id and data_devolucao is not null'; 
+
+        $query = $db->prepare($sql);
+        $query->bindValue(":cliente_id",$cliente_id);
+        $query->execute();
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        return $row["count(*)"];
+    }
 
 }
 

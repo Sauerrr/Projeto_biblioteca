@@ -57,17 +57,17 @@ if (!$livro) {
                 <form action="livro_editar_post.php" method="POST">
                     <div class="mb-3">
                         <label for="titulo" class="form-label" id="titulo">Titulo</label>
-                        <input type="text" name="titulo" class="form-control" id="titulo" value="<?php echo $livro->getTitulo(); ?>">
+                        <input type="text" name="titulo" class="form-control" id="titulo" required value="<?php echo $livro->getTitulo(); ?>">
 
                         <label for="ano" class="form-label" id="ano">Ano de lançamento</label>
-                        <input type="number" name="ano" class="form-control" id="ano" value="<?php echo $livro->getAno(); ?>">
+                        <input type="number" name="ano" class="form-control" id="ano"  required value="<?php echo $livro->getAno(); ?>">
 
 
                         <label for="genero" class="form-label" id="genero">Genero</label>
-                        <input type="text" name="genero" class="form-control" id="genero" value="<?php echo $livro->getGenero(); ?>">
+                        <input type="text" name="genero" class="form-control" id="genero" required value="<?php echo $livro->getGenero(); ?>">
 
                         <label for="isbn" class="form-label" id="isbn">ISBN</label>
-                        <input type="text" name="isbn" class="form-control" id="isbn" value="<?php echo $livro->getIsbn(); ?>">
+                        <input type="text" name="isbn" class="form-control" id="isbn" required value="<?php echo $livro->getIsbn(); ?>">
 
                         <br>
 

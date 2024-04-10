@@ -57,26 +57,26 @@ if (!$cliente) {
                 <form action="cliente_editar_post.php" method="POST">
                     <div class="mb-3">
                         <label for="nome" class="form-label" id="nome">Nome</label>
-                        <input type="text" name="nome" class="form-control" id="nome" value="<?php echo $cliente->getNome(); ?>">
+                        <input type="text" name="nome" class="form-control" id="nome" required value="<?php echo $cliente->getNome(); ?>">
 
                         <label for="telefone" class="form-label" id="telefone">Telefone</label>
-                        <input type="text" name="telefone" class="form-control" id="telefone" value="<?php echo $cliente->getTelefone();?>">
+                        <input type="text" name="telefone" class="form-control" id="telefone" required value="<?php echo $cliente->getTelefone();?>">
                         
                         <label for="email" class="form-label" id="email">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" value="<?php echo $cliente->getEmail();?>">
+                        <input type="email" name="email" class="form-control" id="email" required value="<?php echo $cliente->getEmail();?>">
                         
                         <label for="cpf" class="form-label" id="cpf">CPF</label>
-                        <input type="text" name="cpf" class="form-control" id="cpf" value="<?php echo $cliente->getCpf(); ?>">
+                        <input type="text" name="cpf" class="form-control" id="cpf"required value="<?php echo $cliente->getCpf(); ?>">
 
                         <label for="rg" class="form-label" id="rg">RG</label>
-                        <input type="text" name="rg" class="form-control" id="rg" value="<?php echo $cliente->getRg(); ?>">
+                        <input type="text" name="rg" class="form-control" id="rg" required value="<?php echo $cliente->getRg(); ?>">
 
-                        <label for="data_nascimento" class="form-label" id="data_nascimento">Data de Nascimento</label>
-                        <input type="date" name="data_nascimento" class="form-control" id="data_nascimento" value="<?php echo $cliente->getDataNascimento(); ?>">
+                        <label for="data_nascimento" class="form-label" id="data_nascimento" required>Data de Nascimento</label>
+                        <input type="date" name="data_nascimento" class="form-control" id="data_nascimento" required value="<?php echo $cliente->getDataNascimento(); ?>">
                     </div>
 
                     <div class="mb-3">
-                        <input type="hidden" name="id" value="<?php echo $cliente->getId(); ?>">
+                        <input type="hidden" name="id"required value="<?php echo $cliente->getId(); ?>">
                         <button type="submit" class="btn btn-success">Editar</button>
                     </div>
                 </form>

@@ -39,19 +39,19 @@ if (!Auth::isAutenticated()) {
                 <form action="funcionario_novo_post.php" method="POST">
                     <div class="mb-3">
                         <label for="nome" class="form-label" id="nome">Nome</label>
-                        <input type="text" name="nome" class="form-control" id="nome">
+                        <input type="text" name="nome" class="form-control" id="nome" required>
 
                         <label for="cpf" class="form-label" id="cpf">CPF</label>
-                        <input type="text" name="cpf" class="form-control" id="cpf">
+                        <input type="text" name="cpf" class="form-control" id="cpf" required>
 
                         <label for="telefone" class="form-label" id="telefone">Telefone</label>
-                        <input type="text" name="telefone" class="form-control" id="telefone">
+                        <input type="text" name="telefone" class="form-control" id="telefone" required>
 
                         <label for="senha" class="form-label" id="senha">Senha</label>
-                        <input type="text" name="senha" class="form-control" id="senha">
+                        <input type="text" name="senha" class="form-control" id="senha" required>
 
                         <label for="email" class="form-label" id="email">Email</label>
-                        <input type="email" name="email" class="form-control" id="email">
+                        <input type="email" name="email" class="form-control" id="email" required>
 
 
                     </div>
