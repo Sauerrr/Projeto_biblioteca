@@ -387,7 +387,7 @@ class EmprestimoRepository implements Repository{
     public static function countByClientesDevol($cliente_id){ 
         $db = DB::getInstance();
 
-        $sql = 'SELECT count(*) FROM emprestimo WHERE cliente_id = :cliente_id and data_devolucao is not null'; 
+        $sql = 'SELECT count(*) FROM emprestimo WHERE cliente_id = :cliente_id and data_devolucao is not null '; 
 
         $query = $db->prepare($sql);
         $query->bindValue(":cliente_id",$cliente_id);
@@ -397,7 +397,19 @@ class EmprestimoRepository implements Repository{
         return $row["count(*)"];
     }
 
+    public static function countByClientesVencimento($cliente_id){ 
+        $db = DB::getInstance();
+        
+        $sql = 'SELECT count(*) FROM emprestimo WHERE cliente_id = :cliente_id and data_vencimento is not null '; 
+
+        $query = $db->prepare($sql);
+        $query->bindValue(":cliente_id",$cliente_id);
+        $query->execute();
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        return $row["count(*)"];
+
 }
 
-
+    }
 ?>

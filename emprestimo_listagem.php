@@ -63,15 +63,15 @@ if (!Auth::isAutenticated()) {
                                 echo $emprestimo->getClienteId() . " - " . $cliente->getNome(); ?>
                             </td>
                             <td><?php echo $emprestimo->getDataVencimento("d/m/Y"); ?> </td>
-                            <td><?php echo $emprestimo->getDataDevolucao("d/m/Y"); ?> </td>
+                            <td><?php echo $emprestimo->getDataDevolucao("d/m/Y H:i:s"); ?> </td>
 
                            <td> 
                            <?php 
                                 if(
-                                $emprestimo->getDataVencimento("Y-m-d") >= date("Y-m-d") == null &&
+                                $emprestimo->getDataVencimento("Y-m-d") >= date("Y-m-d") &&
                                 $emprestimo->getDataRenovacao() == null &&
                                 $emprestimo->getDataAlteracao() == null
-                                ){?>
+                                ){ ?>
                                   <a href="emprestimo_renovar.php?id=<?php echo $emprestimo->getId(); ?>" class="btn btn-primary">Renovar</a>
                                 <?php } ?>
                             <?php 
