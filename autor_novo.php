@@ -39,7 +39,7 @@ if (!Auth::isAutenticated()) {
                 <form action="autor_novo_post.php" method="POST">
                     <div class="mb-3">
                         <label for="nome" class="form-label" id="nome">Nome</label>
-                        <input type="text" name="nome" class="form-control" id="nome" required>
+                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" required>
                     </div>
 
                     <div class="mb-3">

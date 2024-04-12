@@ -39,7 +39,7 @@ if (!Auth::isAutenticated()) {
                     <th>Livro</th>
                     <th>Cliente</th>
                     <th>Data Vencimento</th>
-                    <th>Data de Devolução</th>
+               
                     
 
                 </thead>
@@ -63,7 +63,7 @@ if (!Auth::isAutenticated()) {
                             </td>
                             
                             <td><?php echo $emprestimo->getDataVencimento("d/m/Y"); ?> </td>
-                            <td><?php echo $emprestimo->getDataDevolucao(); ?> </td>
+                            
 
                             
                                 <?php

@@ -29,13 +29,14 @@ if(Auth::isAutenticated()){
                     <div class="inputbox">
                         <icon-icon name="mail-outline"></icon-icon>
                         <input name="cpf" type="text" required>
-                        <label for="">CPF</label>
+                        <label for="cpf">CPF</label>
                     </div>
                     <div class="inputbox">
                         <icon-icon name="lock-closed-outline"></icon-icon>
                         <input name="senha" type="password" required>
-                        <label for="">Senha</label>
+                        <label for="senha">Senha</label>
                     </div>
+                    
 
                     <button>Entrar</button>
                 </form>

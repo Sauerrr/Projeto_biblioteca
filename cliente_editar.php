@@ -47,7 +47,6 @@ if (!$cliente) {
         <br>
         <div id="botaonovo">
             <a href="cliente_listagem.php" class="btn btn-info">Voltar</a>
-            <a href="cliente_novo.php" class="btn btn-info">Novo</a>
 
         </div>
 

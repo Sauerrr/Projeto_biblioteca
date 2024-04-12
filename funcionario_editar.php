@@ -47,7 +47,7 @@ if (!$funcionario) {
         <br>
         <div id="botaonovo">
             <a href="funcionario_listagem.php" class="btn btn-info">Voltar</a>
-            <a href="funcionario_novo.php" class="btn btn-info">Novo</a>
+       
 
         </div>
 

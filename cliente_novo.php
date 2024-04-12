@@ -39,24 +39,24 @@ if (!Auth::isAutenticated()) {
                 <form action="cliente_novo_post.php" method="POST">
                     <div class="mb-3">
                         <label for="nome" class="form-label" id="nome">Nome</label>
-                        <input type="text" name="nome" class="form-control" id="nome" required>
+                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Digite seu nome" required>
 
                         <label for="telefone" class="form-label" id="telefone">Telefone</label>
-                        <input type="text" name="telefone" class="form-control" id="telefone" required>
+                        <input type="text" name="telefone" class="form-control" id="telefone" placeholder="() 00000-0000" required>
 
                         <label for="email" class="form-label" id="email">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" required>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Digite seu E-mail" required>
 
                         <label for="cpf" class="form-label" id="cpf">CPF</label>
-                        <input type="text" name="cpf" class="form-control" id="cpf" required>
+                        <input type="text" name="cpf" class="form-control" id="cpf" placeholder="000.000.000-00" required>
 
                         <label for="rg" class="form-label" id="rg">RG</label>
-                        <input type="text" name="rg" class="form-control" id="rg" required>
+                        <input type="text" name="rg" class="form-control" id="rg" placeholder="00.000.000-0" required>
 
                         <label for="data_nascimento" class="form-label" id="data_nascimento">Data de Nascimento</label>
                         <?php $cliente = ClienteRepository::listAll();
                         $cliente = $cliente[0]; ?>
-                        <input type="text" name="data_nascimento" class="form-control data_nascimento" required>
+                        <input type="text" name="data_nascimento" class="form-control data_nascimento" placeholder="Dia/Mes/Ano" required>
 
 
 

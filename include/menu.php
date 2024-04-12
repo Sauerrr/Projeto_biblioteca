@@ -7,6 +7,27 @@
 
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Funcionários
+
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="funcionario_listagem.php">Listagem</a></li>
+
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Clientes
+
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="cliente_listagem.php">Listagem</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Autores
 
             </button>
@@ -14,6 +35,17 @@
                 <li><a class="dropdown-item" href="autor_listagem.php">Listagem</a></li>
             </ul>
         </div>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Livros
+
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="livro_listagem.php">Listagem</a></li>
+            </ul>
+        </div>
+
 
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,38 +69,7 @@
 
             </button>
             
-     
 
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Funcionários
-
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="funcionario_listagem.php">Listagem</a></li>
-
-            </ul>
-        </div>
-
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Livros
-
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="livro_listagem.php">Listagem</a></li>
-            </ul>
-        </div>
-
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Clientes
-
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="cliente_listagem.php">Listagem</a></li>
-            </ul>
-        </div>
 
         <a href="logout.php" class="btn btn-danger">Sair</a>
     

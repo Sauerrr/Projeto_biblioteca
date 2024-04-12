@@ -47,7 +47,6 @@ if (!$autor) {
         <br>
         <div id="botaonovo">
             <a href="autor_listagem.php" class="btn btn-info">Voltar</a>
-            <a href="autor_novo.php" class="btn btn-info">Novo</a>
 
         </div>
 

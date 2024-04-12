@@ -42,6 +42,7 @@ if (!Auth::isAutenticated()) {
                     <th>Ano de lançamento</th>
                     <th>Genero</th>
                     <th>ISBN</th>
+                    <th>Id Autor</th>
                     <th>Ações</th>
 
                 </thead>
@@ -50,6 +51,7 @@ if (!Auth::isAutenticated()) {
                     <?php
                     foreach (LivroRepository::listAll() as $livro) {
                     ?>
+                    
 
                         <tr>
                             <td><?php echo $livro->getId(); ?></td>
@@ -57,6 +59,7 @@ if (!Auth::isAutenticated()) {
                             <td><?php echo $livro->getAno(); ?> </td>
                             <td><?php echo $livro->getGenero(); ?> </td>
                             <td><?php echo $livro->getIsbn(); ?> </td>
+                            <td><?php echo $livro->getAutorId();?></td>
 
 
                             <td>

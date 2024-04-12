@@ -63,8 +63,7 @@ if(LivroRepository::countByAlteracaoFuncionario($funcionario->getId()) > 0){
     exit();
 }
 
+
 FuncionarioRepository::delete($funcionario->getId());
 
 header("location: funcionario_listagem.php");
-
-?>

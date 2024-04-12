@@ -9,7 +9,7 @@ if (!Auth::isAutenticated()) {
 $user = Auth::getUser();
 
 if (!isset($_POST["id"])) {
-    header("location: funcionario_listagem.php?1");
+    header("location: funcionario_listagem.php");
     exit();
 }
 
@@ -32,13 +32,11 @@ if (!isset($_POST["senha"])){
     exit();
 }
 
-if( $_POST["senha"] !=  $_POST ["repSenha"]){
+if( $_POST["repSenha"] !=  $_POST ["repSenha"]){
     header("location: funcionario_senha.php?id=".$funcionario->getId());
     
     exit();
 }
-
-
 
 $funcionario->setSenha($_POST["senha"]);
 $funcionario->setAlteracaoFuncionarioId($user->getId());
@@ -46,6 +44,6 @@ $funcionario->setDataAlteracao(date("Y-m-d H:i:s"));
 
 FuncionarioRepository::update($funcionario);
 
-header("location: funcionario_senha.php?id=".$funcionario->getId());
+header("location: funcionario_listagem.php?id=".$funcionario->getId());
 
 ?>
