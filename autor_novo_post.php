@@ -19,7 +19,7 @@ if( $_POST["nome"] == "" || $_POST ["nome"] == null){
     
     exit();
 }
-
+date_default_timezone_set('America/Sao_Paulo');
 $autor = Factory::autor();
 
 $autor->setNome($_POST["nome"]);
@@ -33,6 +33,6 @@ if($autor_retorno > 0){
     exit();
 }
 
-header("location: autor_novo.php");
+header("location: autor_listagem.php");
 
 ?>

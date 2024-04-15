@@ -49,6 +49,6 @@ if($livro_retorno > 0){
     exit();
 }
 
-header("location: livro_novo.php");
+header("location: livro_listagem.php");
 
 ?>

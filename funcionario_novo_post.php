@@ -67,7 +67,7 @@ if( $_POST["email"] == "" || $_POST ["email"] == null){
     
     exit();
 }
-
+date_default_timezone_set('America/Sao_Paulo');
 $funcionario = Factory::funcionario();
 
 $funcionario->setNome($_POST["nome"]);
@@ -85,6 +85,6 @@ if($funcionario_retorno > 0){
     exit();
 }
 
-header("location: funcionario_novo.php");
+header("location: funcionario_listagem.php");
 
 ?>

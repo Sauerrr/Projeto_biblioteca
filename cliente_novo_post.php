@@ -55,7 +55,7 @@ if( $_POST["data_nascimento"] == "" || $_POST ["data_nascimento"] == null){
     
     exit();
 }
-
+date_default_timezone_set('America/Sao_Paulo');
 
 echo $_POST["data_nascimento"];
 
@@ -79,6 +79,6 @@ if($cliente_retorno > 0){
     exit();
 }
 
-header("location: cliente_novo.php");
+header("location: cliente_listagem.php");
 
 ?>

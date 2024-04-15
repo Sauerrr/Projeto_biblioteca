@@ -63,7 +63,7 @@ $emprestimo_novo = Factory::emprestimo();
                     <label for="cliente" class="form-label">Cliente:</label>
                     <br>
                     <input type="text" name="cliente_id" class="form-control" id="cliente_id" value="<?php $cliente = ClienteRepository::get($emprestimo->getClienteId());
-                                echo $emprestimo->getClienteId() . " - " . $cliente->getNome(); ?>" disabled>
+                                echo $emprestimo->getClienteId() . " - " . $cliente->getNome(); ?>" readonly>
                     <br>
                     <label for="data_vencimento" class="form-label" >Data de Vencimento</label>
                     <input type="text" name="data_vencimento" class="form-control" id="data_vencimento" value="<?php echo $emprestimo->getDataVencimento ("d/m/Y"); ?>" readonly>

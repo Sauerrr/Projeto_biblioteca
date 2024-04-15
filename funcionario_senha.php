@@ -52,7 +52,7 @@ if (!$funcionario) {
         </div>
 
         <div class="row mt-4">
-            <div class="col-md-10">
+            <div class="col-md-7">
 
                 <form action="funcionario_senha_post.php" method="POST">
                     <div class="mb-3">

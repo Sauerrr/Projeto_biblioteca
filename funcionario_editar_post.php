@@ -38,7 +38,7 @@ if( $_POST["nome"] == "" || $_POST ["nome"] == null){
     exit();
 }
 
-
+date_default_timezone_set('America/Sao_Paulo');
 $funcionario->setNome($_POST["nome"]);
 $funcionario->setCpf($_POST["cpf"]);
 $funcionario->setTelefone($_POST["telefone"]);

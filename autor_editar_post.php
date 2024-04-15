@@ -45,6 +45,6 @@ $autor->setDataAlteracao(date("Y-m-d H:i:s"));
 
 AutorRepository::update($autor);
 
-header("location: autor_editar.php?id".$autor->getId());
+header("location: autor_listagem.php?id".$autor->getId());
 
 ?>

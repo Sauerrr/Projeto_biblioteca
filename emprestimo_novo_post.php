@@ -41,6 +41,7 @@ if(
     header("location: emprestimo_novo.php");
 }
 
+date_default_timezone_set('America/Sao_Paulo');
 $emprestimo = Factory::emprestimo();
 
 $emprestimo->setLivroId($_POST["livro_id"]);

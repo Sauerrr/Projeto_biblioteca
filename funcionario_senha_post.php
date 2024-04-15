@@ -37,7 +37,7 @@ if( $_POST["repSenha"] !=  $_POST ["repSenha"]){
     
     exit();
 }
-
+date_default_timezone_set('America/Sao_Paulo');
 $funcionario->setSenha($_POST["senha"]);
 $funcionario->setAlteracaoFuncionarioId($user->getId());
 $funcionario->setDataAlteracao(date("Y-m-d H:i:s")); 

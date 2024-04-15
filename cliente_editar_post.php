@@ -38,7 +38,7 @@ if( $_POST["nome"] == "" || $_POST ["nome"] == null){
     exit();
 }
 
-
+date_default_timezone_set('America/Sao_Paulo');
 $cliente->setNome($_POST["nome"]);
 $cliente->setTelefone($_POST["telefone"]);
 $cliente->setEmail($_POST["email"]);
@@ -50,6 +50,6 @@ $cliente->setDataAlteracao(date("Y-m-d H:i:s"));
 
 ClienteRepository::update($cliente);
 
-header("location: cliente_editar.php?id".$cliente->getId());
+header("location: cliente_listagem.php?id".$cliente->getId());
 
 ?>
