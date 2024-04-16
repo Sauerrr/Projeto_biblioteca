@@ -8,6 +8,12 @@ if (!Auth::isAutenticated()) {
 
 $user = Auth::getUser();
 
+if($_POST["data_nascimento"] >= date("Y-m-d")){
+    header("location: cliente_novo.php?Data Nascimento inválida");
+
+    exit();
+}
+
 if (!isset($_POST["nome"])){
     header("location: cliente_novo.php");
 
